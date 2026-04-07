@@ -1,19 +1,6 @@
 {
   "name": "Amazing Grace Home Living",
   "short_name": "Amazing Grace",
-  "description": "Amazing Grace Home Living: Secure housing, Ministry outreach, and The Seven Stars Arcade.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#120626",
-  "theme_color": "#00ff41",
-  "icons": [
-    {
-      "src": "icons/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/icon-512.png",
   "description": "Amazing Grace Home Living, Voice of Jesus Ministry, and The Seven Stars Arcade.",
   "start_url": "/index.html",
   "display": "standalone",
