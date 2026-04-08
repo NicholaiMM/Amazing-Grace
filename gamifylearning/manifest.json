@@ -1,0 +1,16 @@
+{
+  "name": "Gamify Learning",
+  "short_name": "GamifyLearn",
+  "description": "An educational arcade-style platform with Arcade, Camp, Home Living, and Portfolio Hub.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#33ccff",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3132/3132693.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

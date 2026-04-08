@@ -1,0 +1,4 @@
+/* Shared global styles for Amazing Grace & Gamify Learning */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 0; }
+a { text-decoration: none; }

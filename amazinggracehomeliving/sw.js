@@ -1,21 +1,7 @@
-const CACHE_NAME = 'amazing-grace-v2';
+const CACHE_NAME = 'amazing-grace-home-v1';
 const ASSETS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/assets/manifest.json',
-    '/assets/shared.css',
-    '/amazinggracehomeliving/',
-    '/amazinggracehomeliving/index.html',
-    '/gamifylearning/',
-    '/gamifylearning/index.html',
-    '/gamifylearning/arcade/',
-    '/gamifylearning/arcade/index.html',
-    '/gamifylearning/camp/',
-    '/gamifylearning/camp/index.html',
-    '/gamifylearning/home-living/',
-    '/gamifylearning/home-living/index.html',
-    '/gamifylearning/portfolio-hub/',
-    '/gamifylearning/portfolio-hub/index.html'
+    './index.html',
+    './manifest.json'
 ];
 
 self.addEventListener('install', event => {
@@ -48,4 +34,3 @@ self.addEventListener('fetch', event => {
         })
     );
 });
-

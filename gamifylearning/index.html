@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#33ccff">
+    <meta name="description" content="Gamify Learning: An educational arcade-style platform with Arcade, Camp, Home Living, and Portfolio Hub.">
+
+    <meta property="og:title" content="Gamify Learning">
+    <meta property="og:description" content="Learn through play — Arcade, Camp, Home Living, and Portfolio Hub all in one place.">
+    <meta property="og:type" content="website">
+
+    <link rel="manifest" href="manifest.json">
+    <title>Gamify Learning | Educational Platform</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gl: { dark: '#0a0a1a', blue: '#33ccff', purple: '#9b59b6', gold: '#ffd700', green: '#2ecc71', pink: '#ff6b9d' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;800&family=VT323&family=Orbitron:wght@400;700;900&display=swap');
+
+        :root {
+            --bg-dark: #0a0a1a;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.12);
+            --glow-blue: rgba(51, 204, 255, 0.3);
+            --glow-gold: rgba(255, 215, 0, 0.3);
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at top, #0d1b3e 0%, var(--bg-dark) 70%);
+            color: #e8e8f0;
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+        }
+
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .terminal { font-family: 'VT323', monospace; }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #33ccff, #9b59b6, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .module-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .module-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+        .module-card.arcade:hover { border-color: #ffd700; box-shadow: 0 0 30px var(--glow-gold); }
+        .module-card.camp:hover { border-color: #2ecc71; box-shadow: 0 0 30px rgba(46, 204, 113, 0.3); }
+        .module-card.home-living:hover { border-color: #33ccff; box-shadow: 0 0 30px var(--glow-blue); }
+        .module-card.portfolio:hover { border-color: #ff6b9d; box-shadow: 0 0 30px rgba(255, 107, 157, 0.3); }
+
+        .pixel-badge {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            padding: 4px 12px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .stars-bg {
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(1px 1px at 10% 15%, #fff 0, transparent 100%),
+                radial-gradient(1px 1px at 55% 8%, #fff 0, transparent 100%),
+                radial-gradient(1.5px 1.5px at 80% 25%, #fff 0, transparent 100%),
+                radial-gradient(1px 1px at 35% 60%, #fff 0, transparent 100%),
+                radial-gradient(1px 1px at 90% 70%, #fff 0, transparent 100%),
+                radial-gradient(1px 1px at 15% 85%, #fff 0, transparent 100%),
+                radial-gradient(1.5px 1.5px at 70% 90%, #fff 0, transparent 100%);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .content { position: relative; z-index: 1; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="stars-bg"></div>
+    <div class="content max-w-5xl mx-auto">
+
+        <header class="text-center mb-12">
+            <p class="terminal text-[#33ccff] text-sm mb-2 tracking-widest">▶ INITIALIZING GAMIFY LEARNING v2.0</p>
+            <h1 class="hero-title mb-4">GAMIFY LEARNING</h1>
+            <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto">
+                An educational arcade-style platform. Level up your knowledge through interactive modules, camps, and challenges.
+            </p>
+            <p class="mt-4 text-sm text-gray-500">← <a href="../" class="underline hover:text-white transition-colors">Back to Hub</a></p>
+        </header>
+
+        <section class="mb-10">
+            <h2 class="orbitron text-xl font-bold text-center mb-8 text-[#33ccff] tracking-widest uppercase">Choose Your Module</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <a href="arcade/" class="module-card arcade">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-4xl">🕹️</span>
+                        <span class="pixel-badge bg-[#ffd700]/15 text-[#ffd700]">ARCADE</span>
+                    </div>
+                    <h3 class="orbitron text-xl font-bold text-[#ffd700] mb-2">The Arcade</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Play through story-driven educational games. Solve mysteries, answer quizzes, and earn stars as you learn.
+                    </p>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Mystery</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Quiz</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Adventure</span>
+                    </div>
+                </a>
+
+                <a href="camp/" class="module-card camp">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-4xl">🏕️</span>
+                        <span class="pixel-badge bg-[#2ecc71]/15 text-[#2ecc71]">CAMP</span>
+                    </div>
+                    <h3 class="orbitron text-xl font-bold text-[#2ecc71] mb-2">Learning Camp</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Structured learning tracks and boot camps for skill-building. From coding to life skills — camp has it all.
+                    </p>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Coding</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Life Skills</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Tracks</span>
+                    </div>
+                </a>
+
+                <a href="home-living/" class="module-card home-living">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-4xl">🏠</span>
+                        <span class="pixel-badge bg-[#33ccff]/15 text-[#33ccff]">HOME LIVING</span>
+                    </div>
+                    <h3 class="orbitron text-xl font-bold text-[#33ccff] mb-2">Home Living</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Resources and guides for independent living, budgeting, housing, and community support.
+                    </p>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Budgeting</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Housing</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Community</span>
+                    </div>
+                </a>
+
+                <a href="portfolio-hub/" class="module-card portfolio">
+                    <div class="flex items-start justify-between mb-4">
+                        <span class="text-4xl">📁</span>
+                        <span class="pixel-badge bg-[#ff6b9d]/15 text-[#ff6b9d]">PORTFOLIO</span>
+                    </div>
+                    <h3 class="orbitron text-xl font-bold text-[#ff6b9d] mb-2">Portfolio Hub</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Showcase your projects, achievements, and learning journey. Build and share your personal portfolio.
+                    </p>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Projects</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Resume</span>
+                        <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-400">Showcase</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 text-xs py-6 border-t border-white/5">
+            <p class="terminal text-sm text-[#33ccff]/50">GAMIFY LEARNING © 2025 // LEVEL UP YOUR LIFE</p>
+        </footer>
+    </div>
+</body>
+</html>

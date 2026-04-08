@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ffd700">
+    <meta name="description" content="Gamify Learning Arcade: Story-driven educational games and interactive challenges.">
+    <title>The Arcade | Gamify Learning</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;800&family=VT323&family=Orbitron:wght@400;700;900&family=Cochin:wght@400;700&display=swap');
+
+        :root { --game-bg: #0d0c1d; --primary-btn: #4a235a; --deep: #120626; }
+
+        body {
+            margin: 0;
+            background: radial-gradient(circle at center, #1a0d30 0%, var(--deep) 100%);
+            color: #e0e0e0;
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+        }
+
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .terminal { font-family: 'VT323', monospace; }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700, #ff9500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #game-wrapper {
+            font-family: 'Cochin', serif;
+            background-color: var(--game-bg);
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 550px;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .stars-layer {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(2px 2px at 20% 20%, #fff 0, transparent 60%),
+                radial-gradient(1.5px 1.5px at 80% 30%, #fff 0, transparent 60%),
+                radial-gradient(1px 1px at 50% 70%, #fff 0, transparent 60%);
+            background-size: 100px 100px, 120px 120px, 90px 90px;
+            animation: twinkle 5s linear infinite;
+            opacity: 0.6;
+        }
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+        .game-container {
+            text-align: center;
+            background: rgba(25, 23, 43, 0.95);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            max-width: 90%;
+            width: 560px;
+            position: relative;
+            z-index: 10;
+            border: 3px solid #ffd700;
+        }
+        .game-container button {
+            padding: 0.9rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            background-color: var(--primary-btn);
+            color: #fff;
+            margin: 0.4rem;
+            width: 100%;
+            transition: 0.3s;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+        .game-container button:hover { background-color: #6a3480; transform: translateY(-2px); }
+        .game-container input {
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 2px solid var(--primary-btn);
+            width: 80%;
+            background: var(--game-bg);
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-3xl mx-auto">
+        <header class="mb-8">
+            <p class="text-sm text-gray-500 mb-2">
+                <a href="../" class="hover:text-[#33ccff] transition-colors">← Gamify Learning</a>
+            </p>
+            <h1 class="page-title">🕹️ The Arcade</h1>
+            <p class="terminal text-[#ffd700] text-lg mt-1">STORY-DRIVEN LEARNING GAMES</p>
+        </header>
+
+        <div id="game-wrapper">
+            <div class="stars-layer"></div>
+            <div class="game-container">
+                <h2 class="text-[#ffd700] text-2xl md:text-3xl font-bold mb-4 orbitron">The Seven Stars</h2>
+                <div id="game-state"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const gameData = {
+            intro: {
+                title: "A Crime in Stellara",
+                text: "The priceless 'Seven Stars' lens has been stolen. <strong>Clue 1:</strong> 'The light is out. Look for the Lavender trail...'",
+                buttons: [{ text: "Begin Investigation", next: "location1" }]
+            },
+            location1: {
+                title: "The Observatory",
+                type: "quiz",
+                question: "Which suspect is associated with Lavender?",
+                answers: [
+                    { text: "Lord Blackwood", correct: false },
+                    { text: "Dr. Evelyn Reed", correct: true },
+                    { text: "Marcus", correct: false }
+                ],
+                next: "location2",
+                correct_response: "Correct! You found Clue 2: 'Check the ledger.'"
+            },
+            location2: {
+                title: "Blackwood Residence",
+                type: "input",
+                question: "Ledger entry: 'Deliver to the [BLANK]'",
+                answer: "docks",
+                next: "conclusion",
+                correct_response: "Success! The word is 'docks'."
+            },
+            conclusion: {
+                title: "The Reveal",
+                type: "final",
+                question: "Who is the accomplice?",
+                answers: [
+                    { text: "Marcus the Janitor", correct: true },
+                    { text: "The Curator", correct: false }
+                ],
+                final_reveal: "Solved! Marcus took the payoff.",
+                fail_reveal: "The culprits escaped!"
+            }
+        };
+
+        function renderStage(stageKey) {
+            const stage = gameData[stageKey];
+            let html = `<h3 class="text-lg font-bold mb-3 text-white orbitron">${stage.title}</h3>`;
+            if (stage.text) html += `<p class="mb-4 text-sm text-gray-300 border-l-2 border-[#4a235a] pl-3 text-left">${stage.text}</p>`;
+
+            if (stage.type === 'quiz' || stage.type === 'final') {
+                html += `<p class="text-[#ffd700] italic mb-4">${stage.question}</p><div class="grid gap-2">`;
+                stage.answers.forEach((ans, i) => html += `<button onclick="handleAns('${stageKey}', ${i})">${ans.text}</button>`);
+                html += `</div>`;
+            } else if (stage.type === 'input') {
+                html += `<p class="text-[#ffd700] italic mb-4">${stage.question}</p>
+                         <input type="text" id="ans-input" placeholder="Enter deduction..."><br>
+                         <button onclick="handleInput('${stageKey}')">Submit Clue</button>`;
+            } else if (stage.buttons) {
+                stage.buttons.forEach(btn => html += `<button onclick="renderStage('${btn.next}')">${btn.text}</button>`);
+            }
+            html += `<div id="result" class="mt-4 font-bold"></div>`;
+            document.getElementById('game-state').innerHTML = html;
+        }
+
+        function showGameEnd(success, stage) {
+            const heading = success
+                ? `<h3 class="text-green-400 text-xl font-bold orbitron">Case Closed!</h3><p class="text-sm mt-2">${stage.final_reveal}</p>`
+                : `<h3 class="text-red-400 text-xl font-bold orbitron">Failed!</h3><p class="text-sm mt-2">${stage.fail_reveal}</p>`;
+            document.getElementById('game-state').innerHTML =
+                heading + `<button onclick="renderStage('intro')" class="mt-4">Play Again</button>`;
+        }
+
+        function handleAns(key, idx) {
+            const stage = gameData[key];
+            const res = document.getElementById('result');
+            if (stage.answers[idx].correct) {
+                res.innerHTML = `<span class="text-green-400">${stage.correct_response || 'Correct!'}</span>`;
+                if (stage.type === 'final') setTimeout(() => showGameEnd(true, stage), 1500);
+                else setTimeout(() => renderStage(stage.next), 1500);
+            } else {
+                res.innerHTML = `<span class="text-red-400">Incorrect deduction.</span>`;
+                if (stage.type === 'final') setTimeout(() => showGameEnd(false, stage), 1500);
+            }
+        }
+
+        function handleInput(key) {
+            const stage = gameData[key];
+            const val = document.getElementById('ans-input').value.trim().toLowerCase();
+            const res = document.getElementById('result');
+            if (val === stage.answer) {
+                res.innerHTML = `<span class="text-green-400">${stage.correct_response}</span>`;
+                setTimeout(() => renderStage(stage.next), 1500);
+            } else {
+                res.innerHTML = `<span class="text-red-400">Incorrect. Try again.</span>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => renderStage('intro'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff6b9d">
+    <meta name="description" content="Gamify Learning Portfolio Hub: Showcase your projects, achievements, and learning journey.">
+    <title>Portfolio Hub | Gamify Learning</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;800&family=VT323&family=Orbitron:wght@400;700;900&display=swap');
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at bottom right, #2d0a1e 0%, #0a0a1a 70%);
+            color: #f8e8f0;
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+        }
+
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .terminal { font-family: 'VT323', monospace; }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b9d, #ff3385, #ffb3d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 107, 157, 0.04);
+            border: 1px solid rgba(255, 107, 157, 0.15);
+            border-radius: 16px;
+            padding: 24px;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+        }
+        .portfolio-card:hover {
+            border-color: rgba(255, 107, 157, 0.4);
+            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 20px;
+            background: rgba(255, 107, 157, 0.12);
+            color: #ff9fc4;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-10">
+            <p class="text-sm text-gray-500 mb-3">
+                <a href="../" class="hover:text-[#ff6b9d] transition-colors">← Gamify Learning</a>
+            </p>
+            <h1 class="page-title">📁 Portfolio Hub</h1>
+            <p class="terminal text-[#ff6b9d] text-lg mt-1">SHOWCASE YOUR LEARNING JOURNEY</p>
+            <p class="text-gray-400 text-sm mt-2 max-w-xl">
+                Document your projects, track your achievements, and build a portfolio that demonstrates your skills and growth.
+            </p>
+        </header>
+
+        <section class="mb-10">
+            <h2 class="orbitron text-lg font-bold mb-6 text-[#ff6b9d] tracking-widest uppercase">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-5">
+
+                <div class="portfolio-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-3xl">🌐</span>
+                        <span class="terminal text-xs text-green-400 bg-green-400/10 px-2 py-1 rounded">LIVE</span>
+                    </div>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Personal Website</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                        A responsive personal site built with HTML, CSS, and JavaScript. Features a dark theme and interactive navigation.
+                    </p>
+                    <div>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-3xl">🎮</span>
+                        <span class="terminal text-xs text-yellow-400 bg-yellow-400/10 px-2 py-1 rounded">IN PROGRESS</span>
+                    </div>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Mini Adventure Game</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                        A text-based educational adventure game with branching logic and score tracking.
+                    </p>
+                    <div>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Game Logic</span>
+                        <span class="skill-tag">UX Design</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-3xl">📊</span>
+                        <span class="terminal text-xs text-blue-400 bg-blue-400/10 px-2 py-1 rounded">CONCEPT</span>
+                    </div>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Budget Tracker App</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-3">
+                        A simple income/expense tracker with visual charts to help with monthly budgeting.
+                    </p>
+                    <div>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Data Viz</span>
+                        <span class="skill-tag">Finance</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card border-dashed border-[#ff6b9d]/20 flex flex-col items-center justify-center text-center py-8">
+                    <span class="text-4xl mb-3">➕</span>
+                    <h3 class="orbitron text-sm font-bold text-[#ff6b9d] mb-2">Add Your Project</h3>
+                    <p class="text-gray-500 text-xs">
+                        Complete a camp track or arcade challenge to unlock a new portfolio entry.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="orbitron text-lg font-bold mb-4 text-[#ff6b9d] tracking-widest uppercase">Skill Badges</h2>
+            <div class="flex flex-wrap gap-3">
+                <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
+                    <span>🏅</span>
+                    <span class="text-sm font-bold text-white">Web Foundations</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
+                    <span>⭐</span>
+                    <span class="text-sm font-bold text-white">Digital Literacy</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 opacity-40">
+                    <span>🔒</span>
+                    <span class="text-sm font-bold text-gray-400">Python Bootcamp</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 opacity-40">
+                    <span>🔒</span>
+                    <span class="text-sm font-bold text-gray-400">Life Skills 101</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 text-xs py-6 border-t border-white/5">
+            <p class="terminal text-sm text-[#ff6b9d]/50">GAMIFY LEARNING // PORTFOLIO HUB</p>
+        </footer>
+    </div>
+</body>
+</html>

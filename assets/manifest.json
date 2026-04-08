@@ -2,7 +2,7 @@
   "name": "Amazing Grace & Gamify Learning Hub",
   "short_name": "AG Hub",
   "description": "Hub for Amazing Grace Home Living and Gamify Learning — empowering communities through housing and education.",
-  "start_url": "index.html",
+  "start_url": "../index.html",
   "display": "standalone",
   "background_color": "#080818",
   "theme_color": "#00ff41",
@@ -14,4 +14,3 @@
     }
   ]
 }
-
