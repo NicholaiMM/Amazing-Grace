@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2ecc71">
+    <meta name="description" content="Gamify Learning Camp: Structured learning tracks and boot camps for skill-building.">
+    <title>Learning Camp | Gamify Learning</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;800&family=VT323&family=Orbitron:wght@400;700;900&display=swap');
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at top left, #0a2818 0%, #0a0a1a 70%);
+            color: #e8f5e9;
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+        }
+
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .terminal { font-family: 'VT323', monospace; }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #2ecc71, #27ae60, #a8e6cf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .track-card {
+            background: rgba(46, 204, 113, 0.05);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .track-card:hover {
+            border-color: rgba(46, 204, 113, 0.5);
+            box-shadow: 0 8px 30px rgba(46, 204, 113, 0.15);
+        }
+
+        .level-badge {
+            font-family: 'VT323', monospace;
+            font-size: 0.85rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-10">
+            <p class="text-sm text-gray-500 mb-3">
+                <a href="../" class="hover:text-[#2ecc71] transition-colors">← Gamify Learning</a>
+            </p>
+            <h1 class="page-title">🏕️ Learning Camp</h1>
+            <p class="terminal text-[#2ecc71] text-lg mt-1">STRUCTURED SKILL-BUILDING TRACKS</p>
+            <p class="text-gray-400 text-sm mt-2 max-w-xl">
+                Focused boot camps and learning tracks designed to build real-world skills — from coding fundamentals to independent living.
+            </p>
+        </header>
+
+        <section class="mb-10">
+            <h2 class="orbitron text-lg font-bold mb-6 text-[#2ecc71] tracking-widest uppercase">Active Tracks</h2>
+            <div class="grid md:grid-cols-2 gap-5">
+
+                <div class="track-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-3xl">💻</span>
+                        <span class="level-badge bg-[#2ecc71]/15 text-[#2ecc71]">BEGINNER</span>
+                    </div>
+                    <h3 class="orbitron text-base font-bold text-white mb-2">Web Foundations</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Learn HTML, CSS, and basic JavaScript. Build your first web page from scratch.
+                    </p>
+                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#2ecc71] w-[40%] rounded-full"></div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">3 of 8 modules complete</p>
+                </div>
+
+                <div class="track-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-3xl">🐍</span>
+                        <span class="level-badge bg-yellow-500/15 text-yellow-400">INTERMEDIATE</span>
+                    </div>
+                    <h3 class="orbitron text-base font-bold text-white mb-2">Python Bootcamp</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Master Python scripting, data structures, and automation basics.
+                    </p>
+                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-yellow-400 w-[20%] rounded-full"></div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">2 of 10 modules complete</p>
+                </div>
+
+                <div class="track-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-3xl">🧠</span>
+                        <span class="level-badge bg-[#33ccff]/15 text-[#33ccff]">ALL LEVELS</span>
+                    </div>
+                    <h3 class="orbitron text-base font-bold text-white mb-2">Digital Literacy</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Navigate the digital world safely — email, privacy, online tools, and cybersecurity basics.
+                    </p>
+                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#33ccff] w-[60%] rounded-full"></div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">6 of 10 modules complete</p>
+                </div>
+
+                <div class="track-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-3xl">🌱</span>
+                        <span class="level-badge bg-[#2ecc71]/15 text-[#2ecc71]">BEGINNER</span>
+                    </div>
+                    <h3 class="orbitron text-base font-bold text-white mb-2">Life Skills 101</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        Budgeting, cooking, time management, and self-advocacy for independent living.
+                    </p>
+                    <div class="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-[#2ecc71] w-[75%] rounded-full"></div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-1">6 of 8 modules complete</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 text-xs py-6 border-t border-white/5">
+            <p class="terminal text-sm text-[#2ecc71]/50">GAMIFY LEARNING CAMP // KEEP GROWING</p>
+        </footer>
+    </div>
+</body>
+</html>

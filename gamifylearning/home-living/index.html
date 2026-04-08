@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#33ccff">
+    <meta name="description" content="Gamify Learning Home Living: Resources and guides for independent living, budgeting, and community support.">
+    <title>Home Living | Gamify Learning</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;800&family=VT323&family=Orbitron:wght@400;700;900&display=swap');
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at top right, #0d1b3e 0%, #0a0a1a 70%);
+            color: #e8f4fd;
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+        }
+
+        .orbitron { font-family: 'Orbitron', sans-serif; }
+        .terminal { font-family: 'VT323', monospace; }
+
+        .page-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #33ccff, #0099cc, #66ddff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .resource-card {
+            background: rgba(51, 204, 255, 0.04);
+            border: 1px solid rgba(51, 204, 255, 0.15);
+            border-radius: 16px;
+            padding: 24px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .resource-card:hover {
+            border-color: rgba(51, 204, 255, 0.4);
+            box-shadow: 0 8px 30px rgba(51, 204, 255, 0.12);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="mb-10">
+            <p class="text-sm text-gray-500 mb-3">
+                <a href="../" class="hover:text-[#33ccff] transition-colors">← Gamify Learning</a>
+            </p>
+            <h1 class="page-title">🏠 Home Living</h1>
+            <p class="terminal text-[#33ccff] text-lg mt-1">INDEPENDENT LIVING RESOURCES</p>
+            <p class="text-gray-400 text-sm mt-2 max-w-xl">
+                Practical guides and resources for independent living — housing, budgeting, community support, and more.
+            </p>
+        </header>
+
+        <section class="mb-10">
+            <h2 class="orbitron text-lg font-bold mb-6 text-[#33ccff] tracking-widest uppercase">Resource Categories</h2>
+            <div class="grid md:grid-cols-3 gap-5">
+
+                <div class="resource-card text-center">
+                    <span class="text-4xl mb-3 block">💰</span>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Budgeting</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Track expenses, plan savings, and build financial resilience with interactive tools.
+                    </p>
+                </div>
+
+                <div class="resource-card text-center">
+                    <span class="text-4xl mb-3 block">🏡</span>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Housing Search</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Find affordable housing options, understand leases, and know your tenant rights.
+                    </p>
+                </div>
+
+                <div class="resource-card text-center">
+                    <span class="text-4xl mb-3 block">🤝</span>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Community</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Connect with local support networks, non-profits, and community resources.
+                    </p>
+                </div>
+
+                <div class="resource-card text-center">
+                    <span class="text-4xl mb-3 block">🍳</span>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Cooking & Nutrition</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Budget-friendly meal planning and basic cooking skills for healthy living.
+                    </p>
+                </div>
+
+                <div class="resource-card text-center">
+                    <span class="text-4xl mb-3 block">⚕️</span>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Health & Wellness</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Navigate healthcare options, mental health resources, and wellness practices.
+                    </p>
+                </div>
+
+                <div class="resource-card text-center">
+                    <span class="text-4xl mb-3 block">📋</span>
+                    <h3 class="orbitron text-sm font-bold text-white mb-2">Life Admin</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Managing documents, IDs, insurance, and essential life paperwork.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <div class="resource-card border-[#33ccff]/30">
+                <h2 class="orbitron text-base font-bold mb-4 text-[#33ccff]">Need Housing Assistance?</h2>
+                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                    Amazing Grace Home Living provides affordable, all-inclusive rooms in the Tampa Bay area.
+                    Utilities, WiFi, and community included.
+                </p>
+                <a href="../../amazinggracehomeliving/"
+                   class="inline-block bg-[#33ccff]/10 border border-[#33ccff]/30 text-[#33ccff] px-5 py-2 rounded-lg text-sm font-bold hover:bg-[#33ccff]/20 transition-colors">
+                    View Available Properties →
+                </a>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-600 text-xs py-6 border-t border-white/5">
+            <p class="terminal text-sm text-[#33ccff]/50">GAMIFY LEARNING // HOME LIVING MODULE</p>
+        </footer>
+    </div>
+</body>
+</html>
